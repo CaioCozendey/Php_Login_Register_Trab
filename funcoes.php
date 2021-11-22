@@ -43,16 +43,24 @@ function inicia($usuario, $senha){
     }
     
     //Abre os 4 arquivos
-    $arq1 = fopen("user1.txt", "r");
-    $arq2 = fopen("user2.txt", "r");
-    $arq3 = fopen("user3.txt", "r");
-    $arq4 = fopen("user4.txt", "r");
+    $arq1 = fopen("./Users/user1.txt", "r");
+    $arq2 = fopen("./Users/user2.txt", "r");
+    $arq3 = fopen("./Users/user3.txt", "r");
+    $arq4 = fopen("./Users/user4.txt", "r");
 
     //Divide todas as linhas do arquivo em vetores para melhor manipulação
-    $user1 = file("user1.txt");
-    $user2 = file("user2.txt");
-    $user3 = file("user3.txt");
-    $user4 = file("user4.txt");
+    //TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE
+    // $dir = "./Users/";
+    // $Users = scandir($dir);
+    // $tamanho = sizeof($Users);
+
+    // for ($i = 1; $i < $tamanho; $i++) { 
+    //     $user[$i] = file(".Users.user[$i].txt");
+    // }
+    $user1 = file("./Users/user1.txt");
+    $user2 = file("./Users/user2.txt");
+    $user3 = file("./Users/user3.txt");
+    $user4 = file("./Users/user4.txt");
 
     //Vericia os valores que o usuário inseriu no html passado como parametro e defini os valores das variaveis
     //de acordo com o usuário selecionado
@@ -62,6 +70,10 @@ function inicia($usuario, $senha){
     //Se der ponto extra humilde 
 
     //Define o fuso horário de São Paulo
+    // for ($i = 0; $i   < ; $i + +) { 
+    //     # code...
+    // }
+
     date_default_timezone_set('America/Sao_Paulo');
     if ($usuario == trim($user1[0]) && $senha == trim($user1[1])) {
         $nome = $user1[0];

@@ -22,7 +22,7 @@
                     <input type="date" name="dataNascimento" placeholder="Data de Nascimento">
                     <!-- Botão executar o registro-->
                     <div class="center">
-                        <button class="button" type="submit"> Registrar </button>
+                        <button class="button2" type="submit"> Registrar </button>
                     </div>
                 </form>
             </div>

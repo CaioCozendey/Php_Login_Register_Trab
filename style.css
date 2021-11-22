@@ -68,6 +68,16 @@ input:focus{
     background-image: linear-gradient(to right,#4158d0,#c850c0);
     color: white;   
     font-weight: bold;
+}
+
+.button2{
+    border-radius: 30px; 
+    height: 2.5rem; 
+    width: 7rem;
+    border: none;
+    background-image: linear-gradient(to right,#4158d0,#2bff00);
+    color: white;   
+    font-weight: bold;
 } 
 
 .button:hover{
@@ -75,7 +85,16 @@ input:focus{
     background-image: linear-gradient(to right,#1158d0,#c800c0);
 }
 
+.button2:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right,#1158d0,#40cc24);
+}
+
 .button:active{
+    transform: scale(0.98);
+}
+
+.button2:active{
     transform: scale(0.98);
 }
 

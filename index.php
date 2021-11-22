@@ -30,7 +30,7 @@
                 <!-- Formulário que encaminha para tela de registro -->
                 <form method="post" action="registerscreen.php">
                     <div class="center">
-                        <button class="button" type="submit"> Registrar </button>
+                        <button class="button2" type="submit"> Registrar </button>
                     </div>
                 </form>
             </div>

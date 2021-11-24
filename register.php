@@ -25,9 +25,19 @@
         }
     }       
 
+    $local_dir = './users';
+
+    $files = cleanScand($local_dir);
+    function cleanScand($dir){
+        return array_values(array_diff(scandir($dir), array('.','..')));
+    }
+
+    $size = sizeof(cleanScand($local_dir));
+
+
     /* Verifica o retorno da função verificaSenha e executa a função de registro */
     if (verificaSenha($password1_html, $password2_html) == true){
-        $nome_arquivo = date('d-H-i-s') . '.txt';
+        $nome_arquivo = ($size+1) . '.txt';
         $arquivo = fopen($nome_arquivo, 'w+');
         fwrite($arquivo, $user_html . PHP_EOL);
         fwrite($arquivo, $password1_html . PHP_EOL);
@@ -36,6 +46,7 @@
         $move_arquivo = "users/$nome_arquivo";
         rename($nome_arquivo, $move_arquivo);
         fclose($arquivo);
+        echo "<script> alert('GOD! Usuário criado com sucesso!')</script>";
         include('index.php');
         //verificaRegistro($user_html, $password1_html, $saldo_html, $dataNasciment_html);
     }
@@ -43,18 +54,4 @@
         echo "<script> alert('As senha não são iguais!'); </script>";
         include('registerscreen.php');
     }
-
-
-
-    //CÓDIGO PARA CRIAR UM ARQUIVO COM NOME DINAMICO E JÁ ESCREVE ALGO NELE E JÁ COLOCA ELE NA PASTA USERS, SÓ IMPLEMENTAR AGR
-    // $nome_arquivo = date('d-H-i-s') . '.txt';
-    // $arquivo = fopen($nome_arquivo, 'w+');
-    // fwrite($arquivo, 'linha 1' . PHP_EOL);
-    // fwrite($arquivo, 'linha 2' . PHP_EOL);
-    // $ler_arquivo = fopen($nome_arquivo, 'r');
-    // fclose($arquivo);
-    // $move_arquivo = "users/$nome_arquivo";
-    // rename($nome_arquivo, $move_arquivo);
-    // fclose($ler_arquivo);
-
 ?>

@@ -34,6 +34,7 @@
 
     $size = sizeof(cleanScand($local_dir));
 
+    // FALTA MÉTODO VERIFICAR USUARIO EXISTENTE -- FALTA MÉTODO VERIFICAR USUARIO EXISTENTE -- FALTA MÉTODO VERIFICAR USUARIO EXISTENTE
 
     /* Verifica o retorno da função verificaSenha e executa a função de registro */
     if (verificaSenha($password1_html, $password2_html) == true){

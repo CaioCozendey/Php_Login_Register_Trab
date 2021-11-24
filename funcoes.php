@@ -67,7 +67,7 @@ function inicia($usuario, $senha){
     }
 
     $size = sizeof(cleanScand($local_dir));
-    for ($i = 1; $i <= $size; $i++) { 
+    for ($i = 1; $i < $size+1; $i++) { 
         $caminho = "./users/".$i.".txt";
         $arqopen = fopen("$caminho", "r");
         $user = file("$caminho");
@@ -76,7 +76,19 @@ function inicia($usuario, $senha){
             $dataNascimento = $user[2];
             $saldo = $user[3];
             login($nome, $dataNascimento, $saldo);
-        } 
+        }
+        if ($i == $size) {
+            goto end;
+        }     
+        // FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO
+        end:
+        echo "<script> alert('Usuário inválido!')</script>";
+        include('index.php');
+        break;
+        exit;
     }
+
+    
+    
 
 }

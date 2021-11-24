@@ -19,7 +19,7 @@ function inicia($usuario, $senha){
     }
 
     function returnDir(){
-        return 'C:\xampp\htdocs\Trabalho_Flavio_PHP_CaioDiasCozendey_GuilhermeAlbuquerqueFraga\Users';
+        return 'C:\xampp\htdocs\Trabalho_Flavio_PHP_CaioDiasCozendey_GuilhermeAlbuquerqueFraga\users';
     }
 
 
@@ -59,7 +59,7 @@ function inicia($usuario, $senha){
     }
     
     //Abre os 4 arquivos
-    $arq1 = fopen("./Users/1.txt", "r");
+    $arq1 = fopen("./users/1.txt", "r");
     // $arq2 = fopen("./Users/2.txt", "r");
     // $arq3 = fopen("./Users/3.txt", "r");
     // $arq4 = fopen("./Users/4.txt", "r");

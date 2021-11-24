@@ -1,15 +1,15 @@
 <?php
 
     function registro($username, $password, $money, $dateNasc){
-        $dir = "./Users/";
-        $Users = scandir($dir);
+        $dir = "./users/";
+        $users = scandir($dir);
 
 
-        print_r($Users);
-        $tamanho = sizeof($Users);
+        print_r($users);
+        $tamanho = sizeof($users);
 
         for ($i = 1; $i < $tamanho-1; $i++) { 
-            $x = file("./Users/user[$i].txt");
+            $x = file("./users/user[$i].txt");
             echo $x;
         }
     

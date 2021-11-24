@@ -12,6 +12,9 @@
             <!-- Nome do site -->
             <h1 class=""> Kappa Barretina </h1>
             <div class="img-circular"></div>
+            <form method="post" action="index.php">
+                <button class="button3" type="submit"> Voltar </button>
+            </form>
             <!-- Formulário com usuario, senha, saldo, data de nascimento e botão -->
             <div>
                 <form method="post" action="register.php">

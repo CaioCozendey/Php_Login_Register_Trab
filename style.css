@@ -80,6 +80,16 @@ input:focus{
     font-weight: bold;
 } 
 
+.button3{
+    border-radius: 30px; 
+    height: 2.5rem; 
+    width: 7rem;
+    border: none;
+    background-image: linear-gradient(to right,#4158d0,#ff0000);
+    color: white;   
+    font-weight: bold;
+} 
+
 .button:hover{
     cursor: pointer;
     background-image: linear-gradient(to right,#1158d0,#c800c0);
@@ -90,11 +100,20 @@ input:focus{
     background-image: linear-gradient(to right,#1158d0,#40cc24);
 }
 
+.button3:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right,#1158d0,#eb0202);
+}
+
 .button:active{
     transform: scale(0.98);
 }
 
 .button2:active{
+    transform: scale(0.98);
+}
+
+.button3:active{
     transform: scale(0.98);
 }
 
@@ -130,8 +149,7 @@ input:focus{
     box-shadow: 0 7px 10px rgb(0 0 0 / 0.2);
 }
 
-
-/* Tirei as setinhas do type number pq eu odeio a setinha kkkkkk */
+/* Tirei as setinhas do type number pq eu odeio a setinha kkkkkkkk */
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     

@@ -22,7 +22,6 @@ function inicia($usuario, $senha){
         return './users';
     }
 
-
     //Função para verificar se o saldo é positivo ou negativo após idade já validada
     function verificaSaldo($saldoDaFunction){
         if ($saldoDaFunction <= 0) {
@@ -34,9 +33,7 @@ function inicia($usuario, $senha){
 
     function num(){
         return "3";
-    }
-
-    
+    }    
 
     //Função que printa os valores após a confirmação da verifcação de saldo e idade
     //Encaminha pra tela conforme os resultados, utilizando o include
@@ -59,7 +56,6 @@ function inicia($usuario, $senha){
     }
     
     //Define o fuso horário de São Paulo
-    
     date_default_timezone_set('America/Sao_Paulo');
     
     //Pasta dos usuários

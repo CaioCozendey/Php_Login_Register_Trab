@@ -45,9 +45,8 @@
     border-radius: 50%;
    }
 
-.frase{
-    color: red;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.btnBox{
+    display: flex;
 }
 
 input{
@@ -66,6 +65,8 @@ input:focus{
 }
 
 .buttonSaldo{
+    margin: 2.5rem 0 0 0;
+    text-align: center;
     border-radius: 30px; 
     height: 2.5rem; 
     width: 7rem;
@@ -75,6 +76,31 @@ input:focus{
     font-weight: bold;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.buttonSaldoA{
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px; 
+    height: 1.5rem; 
+    width: 7rem;
+    border: none;
+    background-image: linear-gradient(to right,#4158d0,#c850c0);
+    color: white;   
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 0.6rem 0 0.4rem 0;
+}
+
+.buttonSaldoA:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right,#1158d0,#c800c0);
+}
+
+.buttonSaldoA:active{
+    transform: scale(0.98);   
 }
 
 .buttonSaldo:hover{
@@ -147,6 +173,10 @@ input:focus{
     margin-top: 1rem;
     display: flex;
     justify-content: center;
+}
+
+.inpCenter{
+    margin: 0 auto 0 auto;
 }
 
 .sucesso{

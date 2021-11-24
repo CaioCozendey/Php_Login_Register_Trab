@@ -2,11 +2,11 @@
 function inicia($usuario, $senha){
     //O código começa logo após as 3 functions abaixo
     
-    //Função que verifica a idade do usuário após user e senha já validado
+    //Função que calcula idade do usuário e retorna true se for menor e false caso seja um ser milenar a frente do tempo
     function verificaIdade($idadeVerificada){
-        $dataNasc = new DateTime($idadeVerificada);
-        $dataAtual = new DateTime("now");
-        $idade = $dataAtual->format('Y') - $dataNasc->format('Y');
+        $data = new DateTime($idadeVerificada );
+        $resultado = $data->diff( new DateTime( date('Y-m-d') ) );
+        $idade = $resultado->format( '%Y anos' );   
         if ($idade < 18) {
             return true;
         } else {
@@ -15,7 +15,7 @@ function inicia($usuario, $senha){
     }
 
     function returnSize($dir){
-        return sizeof(array_values(array_diff(scandir($dir), array('.','..'))));
+        return sizeof(array_values(array_diff(scandir($dir), array('.','..') ) ) );
     }
 
     function returnDir(){
@@ -61,12 +61,17 @@ function inicia($usuario, $senha){
     //Define o fuso horário de São Paulo
     
     date_default_timezone_set('America/Sao_Paulo');
+    
+    //Pasta dos usuários
     $local_dir = './users';
+    //Função que retorna um array com os arquivos da pasta users
     function cleanScand($dir){
         return array_values(array_diff(scandir($dir), array('.','..')));
     }
 
+    //Pega o tamanho do array da function cleanScand
     $size = sizeof(cleanScand($local_dir));
+    // Um for que efetua ++ a até o número de arquivos da pasta +1, dessa forma efetuando login em todo usuários independente da quantidade
     for ($i = 1; $i < $size+1; $i++) { 
         $caminho = "./users/".$i.".txt";
         $arqopen = fopen("$caminho", "r");
@@ -76,19 +81,11 @@ function inicia($usuario, $senha){
             $dataNascimento = $user[2];
             $saldo = $user[3];
             login($nome, $dataNascimento, $saldo);
+            break;
         }
-        if ($i == $size) {
-            goto end;
-        }     
-        // FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO FALTA ISSO
-        end:
-        echo "<script> alert('Usuário inválido!')</script>";
-        include('index.php');
-        break;
-        exit;
+        else if($i == $size){
+            echo "<script> alert('Usuário inválido!')</script>";
+            include('index.php');
+        }
     }
-
-    
-    
-
 }

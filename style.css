@@ -60,6 +60,27 @@ input:focus{
     box-shadow: 0 0 5px rgb(0 0 0 / 0.9);
 }
 
+.buttonSaldo{
+    border-radius: 30px; 
+    height: 2.5rem; 
+    width: 7rem;
+    border: none;
+    background-image: linear-gradient(to right,#4158d0,#c850c0);
+    color: white;   
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.buttonSaldo:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right,#1158d0,#c800c0);
+}
+
+.buttonSaldo:active{
+    transform: scale(0.98);   
+}
+
 .button{
     border-radius: 30px; 
     height: 2.5rem; 
@@ -119,7 +140,7 @@ input:focus{
 
 .center{
     margin-top: 1rem;
-    display: grid;
+    display: flex;
     justify-content: center;
 }
 

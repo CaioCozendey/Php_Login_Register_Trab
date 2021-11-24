@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title> God mlk </title>
     <link href="style.css" rel="stylesheet">
 </head>
 
@@ -15,7 +15,8 @@
             <div class="img-circular"></div>
             <div class="sucesso"> <?php echo $print; ?> </div>
             <div class="center">
-                <a href="index.php"><button class="button" type="submit"> Sair </button></a>
+                <a href="atualizaSaldo.php"> <button class="buttonSaldo" type="submit"> Novo Saldo </button></a>
+                <a href="index.php"><button class="buttonSaldo" type="submit"> Sair </button></a>
             </div>
         </div>
     </div>

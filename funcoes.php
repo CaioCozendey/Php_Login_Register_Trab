@@ -86,6 +86,7 @@ function inicia($usuario, $senha){
         include('index.php');
         break;
         exit;
+        sds;
     }
 
     

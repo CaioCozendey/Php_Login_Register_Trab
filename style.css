@@ -45,6 +45,11 @@
     border-radius: 50%;
    }
 
+.frase{
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 input{
     display: grid;
     width: 13rem;

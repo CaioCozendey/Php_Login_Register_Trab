@@ -17,7 +17,7 @@
             <!-- Formulário com usuario, senha e botão de login -->
             <p class="frase"> Caso o novo saldo seja R$0,00, digite o número "0" </p>
             <div >
-                <form method="post">
+                <form method="post" action="attSaldo.php">
                     <input type="number" name="saldo" placeholder="Digite seu novo saldo" class="inpCenter">
                     <div class="btnBox">
                         <button class="buttonSaldo" type="submit"> Aplicar Saldo </button>
@@ -30,10 +30,3 @@
 
 </body>
 </html>
-
-<?php
-    $newsaldo = $_REQUEST['saldo'];
-
-    echo $newsaldo;
-
-?>

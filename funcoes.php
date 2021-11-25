@@ -38,7 +38,7 @@ function inicia($usuario, $senha){
     //Função que printa os valores após a confirmação da verifcação de saldo e idade
     //Encaminha pra tela conforme os resultados, utilizando o include
     //Os echos foram armazenados em variaveis para serem impressos de melhor maneira
-    function login($nomeFunction, $idadeFunction, $saldofunction){
+    function login($nomeFunction, $idadeFunction, $saldofunction, $newSaldo){
         if (verificaIdade($idadeFunction) == true) {
             $print = 'Olá ' . ucfirst(trim($nomeFunction)) . '! Vá tomar o seu Toddynho.';
             echo "<script> alert('$print'); </script>";
@@ -46,10 +46,14 @@ function inicia($usuario, $senha){
         } else {
             if (verificaSaldo($saldofunction) == true) {
                 $print = 'Olá ' . ucfirst(trim($nomeFunction)) .'!<br> Seu saldo é de ' . str_replace(['R$', '-'], '',  $saldofunction) . ' negativos. <br> Não se desespere, nenhum obstáculo é tão grande para quem desiste!';
+                $abrindoMagica = fopen("naomecha_magica/magica.txt", "w");
+                fwrite($abrindoMagica, $newSaldo);
                 include('TelaSaldoNegativo.php');
             } 
             else{
                 $print = 'Olá ' . ucfirst(trim($nomeFunction)) .'! <br> Seu saldo é de ' . str_replace('R$', '', $saldofunction) .  '.<br> Não se alegre muito. A desgraça vem logo após a alegria.';
+                $abrindoMagica = fopen("naomecha_magica/magica.txt", "w");
+                fwrite($abrindoMagica, $newSaldo);
                 include('TelaSaldoPositivo.php');
             }
         }
@@ -57,14 +61,12 @@ function inicia($usuario, $senha){
     
     //Define o fuso horário de São Paulo
     date_default_timezone_set('America/Sao_Paulo');
-    
     //Pasta dos usuários
     $local_dir = './users';
     //Função que retorna um array com os arquivos da pasta users
     function cleanScand($dir){
         return array_values(array_diff(scandir($dir), array('.','..')));
     }
-
     //Pega o tamanho do array da function cleanScand
     $size = sizeof(cleanScand($local_dir));
     // Um for que efetua ++ a até o número de arquivos da pasta +1, dessa forma efetuando login em todo usuários independente da quantidade
@@ -76,7 +78,7 @@ function inicia($usuario, $senha){
             $nome = $user[0];
             $dataNascimento = $user[2];
             $saldo = $user[3];
-            login($nome, $dataNascimento, $saldo);
+            login($nome, $dataNascimento, $saldo, "./users/".$i.".txt");
             break;
         }
         else if($i == $size){

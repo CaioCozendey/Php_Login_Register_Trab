@@ -13,7 +13,9 @@
             <!-- Nome do site -->
             <h1 class=""> Kappa Barretina </h1>
             <div class="img-circular"></div>
-            <div class="sucesso"> <?php echo $print; ?> </div>
+            <div class="sucesso"> 
+                <?php echo $print; ?> 
+            </div>
             <div class="center">
                 <a href="atualizaSaldo.php"> <button class="buttonSaldo" type="submit"> Novo Saldo </button></a>
                 <a href="index.php"><button class="buttonSaldo" type="submit"> Sair </button></a>

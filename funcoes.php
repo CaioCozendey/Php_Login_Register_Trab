@@ -1,6 +1,6 @@
 <?php
 function inicia($usuario, $senha){
-    //O código começa logo após as 3 functions abaixo
+    //O código começa logo após as functions abaixo
     
     //Função que calcula idade do usuário e retorna true se for menor e false caso seja um ser milenar a frente do tempo
     function verificaIdade($idadeVerificada){
